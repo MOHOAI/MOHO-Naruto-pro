@@ -1,3 +1,4 @@
+import '../styles.css';
 import {
   auth,
   initAuth,
@@ -800,14 +801,14 @@ $('#scheduleEpisodeBtn')?.addEventListener('click', () => {
 });
 
 $('#startWatching')?.addEventListener('click', () => {
-  window.location.href = '/episodes.html';
+  window.location.href = './episodes.html';
 });
 $('#continueButton')?.addEventListener('click', () => selectEpisode(userProgress.current));
 $$('[data-scroll="watch"]').forEach((button) =>
   button.addEventListener('click', () => {
     const watchSection = document.querySelector('#watch');
     if (watchSection) watchSection.scrollIntoView({ behavior: 'smooth' });
-    else window.location.href = '/episodes.html#watch';
+    else window.location.href = './episodes.html#watch';
   })
 );
 $$('[data-unavailable]').forEach((button) =>

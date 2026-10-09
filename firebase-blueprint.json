@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "UserProgress": {
+      "title": "UserProgress",
+      "description": "User anime watching progress and history",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "currentEpisode": { "type": "number" },
+        "playbackTime": { "type": "number" },
+        "watchedEpisodes": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "currentEpisode", "playbackTime", "watchedEpisodes"]
+    },
+    "WatchSchedule": {
+      "title": "WatchSchedule",
+      "description": "Scheduled watch reminder linked with Google Tasks",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "episodeNumber": { "type": "number" },
+        "episodeTitle": { "type": "string", "maxLength": 200 },
+        "scheduledFor": { "type": "string", "maxLength": 100 },
+        "googleTaskId": { "type": "string", "maxLength": 200 },
+        "status": { "type": "string", "enum": ["pending", "completed", "cancelled"] },
+        "notes": { "type": "string", "maxLength": 500 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "episodeNumber", "episodeTitle", "scheduledFor", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/progress/current": {
+      "schema": "UserProgress",
+      "description": "Stores user current playback state and watched episodes"
+    },
+    "/users/{userId}/schedules/{scheduleId}": {
+      "schema": "WatchSchedule",
+      "description": "Stores user scheduled watch reminders"
+    }
+  }
+}

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c0f14">
+  <meta name="description" content="موهو — مساحة عربية سريعة لمشاهدة ناروتو شيبودن وتنظيم حلقات الأنمي.">
+  <title>موهو | المكتبة والحلقات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,300..700,0..1,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/favicon.jpg" type="image/jpeg">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar shell">
+    <a class="brand" href="/" aria-label="موهو الرئيسية">
+      <span class="brand-mark" aria-hidden="true">
+        <svg class="brand-icon" viewBox="0 0 24 24" width="23" height="23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="brandFireGrad" x1="2" y1="22" x2="22" y2="2" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FF4B2B"/>
+              <stop offset="45%" stop-color="#FF7A45"/>
+              <stop offset="100%" stop-color="#FFB08D"/>
+            </linearGradient>
+            <linearGradient id="brandCoreGrad" x1="8" y1="8" x2="16" y2="16" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FFF275"/>
+              <stop offset="100%" stop-color="#FF8C00"/>
+            </linearGradient>
+          </defs>
+          <path d="M12 2C12.4 4.1 13.9 5.8 15.6 7.2C17.9 9 20.6 10.7 21.2 13.6C22.1 17.6 19.3 21.3 15.3 22.4C11.1 23.5 6.6 21.5 5.2 17.5C3.9 14.2 4.9 10.6 7.3 8.2C8.6 6.8 10.3 5.7 11.2 3.9C11.6 3 11.8 2.4 12 2Z" fill="url(#brandFireGrad)"/>
+          <path d="M12 6.8C13.2 8.6 15.1 10.2 15.1 12.4C15.1 14.4 13.5 15.8 11.6 15.8C10.2 15.8 9.2 14.7 9.2 13.4C9.2 12.2 9.9 11.1 10.6 10.2C11.3 9.2 11.7 8 12 6.8Z" fill="#0C1017" opacity="0.95"/>
+          <path d="M11 11L15.5 13.5L11 16V11Z" fill="url(#brandCoreGrad)"/>
+        </svg>
+      </span>
+      <span class="brand-copy"><strong>موهو</strong><small>ANIME SPACE</small></span>
+    </a>
+    <nav class="nav-links" aria-label="التنقل الرئيسي">
+      <a href="/">الرئيسية</a>
+      <a class="active" href="/episodes.html">المكتبة والحلقات</a>
+      <a href="/downloads.html">التنزيلات</a>
+    </nav>
+    <div class="top-actions">
+      <span class="live-dot"><i></i> مباشر</span>
+      <span id="cloudSyncBadge" class="cloud-sync-badge pending" title="حالة الحفظ"><span class="material-symbols-rounded" style="font-size:13px">cloud_off</span> حفظ محلي</span>
+      <div id="authContainer"></div>
+      <button class="icon-button" id="themeHint" type="button" aria-label="معلومات عن النسخة">؟</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="series-strip shell" aria-labelledby="series-title">
+      <div class="section-heading compact-heading">
+        <div><span class="section-kicker">اختيارات موهو</span><h2 id="series-title">تصفّح السلاسل</h2></div>
+        <span class="heading-note">محدّث اليوم <b></b></span>
+      </div>
+      <div class="series-grid">
+        <article class="series-card unavailable">
+          <div class="series-number">01</div><div class="series-symbol">N</div>
+          <div class="series-info"><h3>ناروتو</h3><p>220 حلقة · غير متاح الآن</p></div><span class="status-pill muted">قريبًا</span>
+          <button type="button" class="card-arrow" data-unavailable="ناروتو">↗</button>
+        </article>
+        <article class="series-card selected" id="shippudenCard">
+          <div class="series-number">02</div><div class="series-symbol orange">S</div>
+          <div class="series-info"><h3>ناروتو شيبودن</h3><p>500 حلقة · مواسم كاملة</p></div><span class="status-pill ready">متاح الآن</span>
+          <button type="button" class="card-arrow" data-scroll="watch">↗</button>
+        </article>
+        <article class="series-card unavailable">
+          <div class="series-number">03</div><div class="series-symbol cyan">B</div>
+          <div class="series-info"><h3>بوروتو</h3><p>293 حلقة · غير متاح الآن</p></div><span class="status-pill muted">قريبًا</span>
+          <button type="button" class="card-arrow" data-unavailable="بوروتو">↗</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="watch-layout shell" id="watch">
+      <div class="content-column">
+        <div class="section-heading">
+          <div><span class="section-kicker">المشاهدة الآن</span><h2>ناروتو شيبودن <span>/ الفهرس</span></h2></div>
+          <div class="availability"><i></i> السيرفر متاح</div>
+        </div>
+        <div class="player-card" id="playerCard">
+          <div class="player-topline"><div class="playing-label"><span class="playing-dot"></span> يتم التشغيل الآن</div><span class="quality-label">HD · MP4</span></div>
+          <div class="video-frame" id="videoFrame">
+            <video id="videoPlayer" controls playsinline preload="metadata" poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1280 720'%3E%3Crect width='1280' height='720' fill='%23070a0f'/%3E%3Ccircle cx='1020' cy='170' r='170' fill='%23ff7a45' opacity='.12'/%3E%3Cpath d='M0 620 400 460 720 560 1280 300V720H0Z' fill='%23151d28'/%3E%3Ctext x='70' y='130' fill='%23ffb08d' font-family='Arial' font-size='32' letter-spacing='6'%3EMOHO / SHIPPUDEN%3C/text%3E%3Ctext x='70' y='650' fill='%23fff' font-family='Arial' font-size='74' font-weight='700'%3ENEXT EPISODE%3C/text%3E%3C/svg%3E">
+              <source id="videoSource" src="https://server.sanime.net/Video2/512/8.mp4" type="video/mp4">
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <div class="video-overlay" id="videoOverlay"><div class="play-orb">▶</div><span>مشاهدة مباشرة · المسار الأصلي للحلقة</span></div>
+          </div>
+          <div class="player-info-row">
+            <div><span class="mini-overline">الحلقة الحالية</span><h3 id="nowPlayingTitle">الحلقة 8 <span>— آرك إنقاذ الكازيكاغي غارا</span></h3><p id="nowPlayingMeta">الموسم 1 · قصة المانغا · 23 دقيقة</p></div>
+            <div class="player-buttons">
+              <button class="button button-small button-dark" id="scheduleEpisodeBtn" aria-label="جدولة تذكير المشاهدة" title="جدولة تذكير في Google Tasks"><span class="material-symbols-rounded">calendar_add_on</span></button>
+              <button class="button button-small button-dark" id="nextEpisodeBtn" aria-label="الحلقة التالية" title="الحلقة التالية"><span class="material-symbols-rounded">skip_next</span></button>
+              <button class="button button-small button-dark" id="prevEpisodeBtn" aria-label="الحلقة السابقة" title="الحلقة السابقة"><span class="material-symbols-rounded">skip_previous</span></button>
+              <button class="button button-small button-dark" id="fullscreenButton" aria-label="ملء الشاشة" title="ملء الشاشة"><span class="material-symbols-rounded">fullscreen</span></button>
+              <a class="button button-small button-primary" id="singleDownload" download href="https://server.sanime.net/Video2/512/8.mp4" aria-label="تنزيل الحلقة" title="تنزيل الحلقة"><span class="material-symbols-rounded">download</span></a>
+            </div>
+          </div>
+          <div class="player-progress"><span>0:00</span><div><i></i></div><span>23:00</span></div>
+        </div>
+
+        <div class="catalog-panel" id="catalog">
+          <div class="catalog-toolbar">
+            <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="ابحث برقم الحلقة أو اسم الآرك" autocomplete="off"><kbd>⌘ K</kbd></label>
+            <div class="filter-group" role="group" aria-label="تصفية نوع الحلقة"><button class="filter-button active" data-type="all">الكل <b>500</b></button><button class="filter-button" data-type="canon">مانغا <b>340</b></button><button class="filter-button" data-type="filler">فلر <b>160</b></button></div>
+          </div>
+          <div class="season-row"><span class="season-label">المواسم</span><div id="seasonTabs" class="season-tabs"></div></div>
+          <div class="episodes-heading"><div><h3 id="episodesTitle">كل الحلقات</h3><span id="episodesCount">عرض 24 من 500 حلقة</span></div><button class="text-button" id="resetFilters">إعادة التصفية ↺</button></div>
+          <div class="episodes-grid" id="episodesGrid"></div>
+          <button class="load-more" id="loadMore">عرض المزيد من الحلقات <span>↓</span></button>
+        </div>
+      </div>
+
+      <aside class="side-column">
+        <div class="side-card" id="scheduleSidebarCard"></div>
+
+        <div class="side-card continue-card">
+          <div class="side-card-head"><span class="section-kicker">استكمال سريع</span><span class="tiny-live"><i></i> آخر مشاهدة</span></div>
+          <div class="continue-art"><span>08</span><small>SHIPPŪDEN</small><b>متابعة الحلقة</b></div>
+          <div class="continue-copy"><strong>آرك إنقاذ الكازيكاغي غارا</strong><span>توقفت عند 12:40 من 23:00</span><div class="mini-progress"><i></i></div></div>
+          <button class="button button-primary full-button" id="continueButton">متابعة المشاهدة <span>←</span></button>
+        </div>
+
+        <div class="side-card note-card"><span class="quote-mark">“</span><p>كل حلقة تأخذك خطوة أبعد. لا تضيّع وقتك في البحث عن الحلقة التالية.</p><div class="note-author"><span class="author-mark">M</span><span><strong>فلسفة موهو</strong><small>أقل تشتيت، أكثر مشاهدة</small></span></div></div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer shell"><div class="footer-brand"><span class="brand-mark small" aria-hidden="true"><svg class="brand-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C12.4 4.1 13.9 5.8 15.6 7.2C17.9 9 20.6 10.7 21.2 13.6C22.1 17.6 19.3 21.3 15.3 22.4C11.1 23.5 6.6 21.5 5.2 17.5C3.9 14.2 4.9 10.6 7.3 8.2C8.6 6.8 10.3 5.7 11.2 3.9C11.6 3 11.8 2.4 12 2Z" fill="url(#brandFireGrad)"/><path d="M12 6.8C13.2 8.6 15.1 10.2 15.1 12.4C15.1 14.4 13.5 15.8 11.6 15.8C10.2 15.8 9.2 14.7 9.2 13.4C9.2 12.2 9.9 11.1 10.6 10.2C11.3 9.2 11.7 8 12 6.8Z" fill="#0C1017" opacity="0.95"/><path d="M11 11L15.5 13.5L11 16V11Z" fill="url(#brandCoreGrad)"/></svg></span><strong>موهو</strong></div><p>مساحتك العربية لمشاهدة الأنمي بوضوح وهدوء.</p><div class="footer-meta"><span>واجهة تجريبية قابلة للربط</span><span>© 2026 MOHO</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="scheduleModal"></div>
+  <div class="modal-backdrop" id="confirmModal"></div>
+  <script type="module" src="/src/app.ts"></script>
+</body>
+</html>
